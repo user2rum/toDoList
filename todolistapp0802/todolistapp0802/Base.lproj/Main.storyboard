@@ -15,26 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pG-2x-OS4">
-                                <rect key="frame" x="99" y="543" width="195" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4G-ik-KW0">
+                                <rect key="frame" x="63" y="516" width="267" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system" title="To Do List">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                <buttonConfiguration key="configuration" style="plain" title="To Do List">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="60"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="5gG-NW-qDj" kind="push" id="SbV-A8-jWR"/>
+                                    <action selector="toDoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHO-eb-7IW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKJ-C6-rPL">
-                                <rect key="frame" x="100" y="685" width="192" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTl-uJ-fmR">
+                                <rect key="frame" x="68" y="636" width="258" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="folder" catalog="system" title="Done List">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done List">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="60"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="N58-qV-eST" kind="push" id="k4w-2W-yDF"/>
+                                    <action selector="doneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atW-Be-ro7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -42,6 +44,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fs0-Xn-3mo"/>
+                    <connections>
+                        <segue destination="5gG-NW-qDj" kind="show" identifier="toDoList" id="Pif-Fu-kEA"/>
+                        <segue destination="N58-qV-eST" kind="show" identifier="doneList" id="obS-gB-9tn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,15 +97,19 @@
                         <constraints>
                             <constraint firstItem="WNP-Vx-HZv" firstAttribute="leading" secondItem="H2P-GB-PeM" secondAttribute="leading" id="MLT-xZ-W9y"/>
                             <constraint firstItem="H2P-GB-PeM" firstAttribute="bottom" secondItem="WNP-Vx-HZv" secondAttribute="bottom" id="PDf-Te-xjt"/>
+                            <constraint firstItem="H2P-GB-PeM" firstAttribute="bottom" secondItem="WNP-Vx-HZv" secondAttribute="bottom" id="SCP-n2-p1m"/>
+                            <constraint firstItem="WNP-Vx-HZv" firstAttribute="leading" secondItem="H2P-GB-PeM" secondAttribute="leading" id="cLl-zC-ktu"/>
                             <constraint firstItem="WNP-Vx-HZv" firstAttribute="top" secondItem="H2P-GB-PeM" secondAttribute="top" id="gQ9-rs-EE6"/>
+                            <constraint firstItem="WNP-Vx-HZv" firstAttribute="top" secondItem="H2P-GB-PeM" secondAttribute="top" id="lq6-4W-jta"/>
                             <constraint firstItem="H2P-GB-PeM" firstAttribute="trailing" secondItem="WNP-Vx-HZv" secondAttribute="trailing" id="pRX-gk-7lG"/>
+                            <constraint firstItem="H2P-GB-PeM" firstAttribute="trailing" secondItem="WNP-Vx-HZv" secondAttribute="trailing" id="toC-5B-XGj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Icn-k3-ab5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mqe-ny-80V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1323" y="-2"/>
+            <point key="canvasLocation" x="1322.9007633587785" y="-2.1126760563380285"/>
         </scene>
         <!--Title-->
         <scene sceneID="K2i-Vi-1F9">
@@ -133,17 +143,11 @@
                             <constraint firstItem="PYZ-Ua-yok" firstAttribute="top" secondItem="LWe-1h-tda" secondAttribute="top" id="kmw-7Y-3l8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="9JI-or-Dm8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="6hd-88-8b3"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="9JI-or-Dm8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZW-Ck-fIN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="198" y="856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="folder" catalog="system" width="128" height="96"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
-    </resources>
 </document>
