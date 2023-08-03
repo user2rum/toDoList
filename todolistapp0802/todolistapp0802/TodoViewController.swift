@@ -24,6 +24,7 @@ class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
+        loadData()
 
     }
     
@@ -70,5 +71,22 @@ class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
             return cell
         
     }
+    func saveData() {
+        UserDefaults.standard.set(self.task, forKey: "tasks")
+    }
+    
+    // 데이터를 UserDefaults에서 불러오는 함수
+    func loadData() {
+        if let savedTasks = UserDefaults.standard.array(forKey: "tasks") as? [String] {
+            self.task = savedTasks
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveData()
+    }
+
 }
 
