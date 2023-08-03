@@ -7,14 +7,24 @@
 
 import UIKit
 
-class TodoViewController: UIViewController {  
+class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
+
+    
+    var task: [String] = []
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+
     }
     
     
@@ -30,10 +40,13 @@ class TodoViewController: UIViewController {
             if let textField = alertController.textFields?.first, let text = textField.text {
                 // 텍스트 필드의 값이 비어 있지 않다면 UserDefaults에 저장합니다.
                 if !text.isEmpty {
-                    //self.saveTask(task: text)
+                    self.task.append(text)
+                    self.tableView.reloadData()
                 }
+                
+              print(self.task)
+                
             }
-            // print(self.tasks)
         }
         
         // 취소 버튼
@@ -44,5 +57,18 @@ class TodoViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.task.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            let task = self.task[indexPath.row]
+            cell.textLabel?.text = task
+            
+            return cell
         
+    }
 }
+
