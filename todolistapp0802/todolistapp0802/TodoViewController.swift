@@ -30,10 +30,10 @@ class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
     
     
     @objc func addButtonTapped() {
-        let alertController = UIAlertController(title: "할 일 목록", message: "기억 해야 할 일이 있나요?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "할 일 목록", message: "할 일을 적어주세요.", preferredStyle: .alert)
         
         alertController.addTextField { (textField) in
-            textField.placeholder = "여기에 할 일을 적어주세요"
+            textField.placeholder = "내용을 입력해주세요."
         }
         
         // 저장 버튼
@@ -71,6 +71,55 @@ class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
             return cell
         
     }
+    
+    // 셀 삭제
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.task.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        if self.task.isEmpty {
+            
+        }
+    }
+    
+    // 테이블뷰 셀 수정
+    func modifyTask(at index: Int, newTask: String) {
+            if index >= 0 && index < task.count {
+                task[index] = newTask
+                tableView.reloadData()
+                saveData()
+            } else {
+                print("Invalid index: \(index)")
+            }
+        }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "할 일 수정", message: nil, preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.text = self.task[indexPath.row]
+        }
+        
+        let saveAction = UIAlertAction(title: "저장", style: .default) { [unowned alertController] _ in
+            if let textField = alertController.textFields?.first, let text = textField.text {
+                // 텍스트 필드의 값이 비어 있지 않다면 수정한 내용으로 셀을 업데이트합니다.
+                if !text.isEmpty {
+                    self.modifyTask(at: indexPath.row, newTask: text)
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    
+    
     func saveData() {
         UserDefaults.standard.set(self.task, forKey: "tasks")
     }
