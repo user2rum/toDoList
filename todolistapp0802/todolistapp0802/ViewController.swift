@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImageView(frame: CGRect(x: 25, y: 132, width: 343, height: 429))
+        let imageView = UIImageView(frame: CGRect(x: 25, y: 132, width: 343, height: 429)) //사진 띄우기
         let image = UIImage(named: "애플")
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
@@ -20,12 +20,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func toDoButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "toDoList", sender: sender)
+        performSegue(withIdentifier: "toDoList", sender: sender) //todolist 버튼
         
         }
         
    
     @IBAction func doneButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "doneList", sender: sender)
+        performSegue(withIdentifier: "doneList", sender: sender) //donelist 버튼
+        
     }
 }
+

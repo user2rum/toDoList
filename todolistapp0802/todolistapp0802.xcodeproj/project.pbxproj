@@ -15,6 +15,7 @@
 		3BD0E7472A7A27BE00DFA169 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD0E7452A7A27BE00DFA169 /* LaunchScreen.storyboard */; };
 		3BD0E74F2A7A284900DFA169 /* 애플.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD0E74E2A7A284800DFA169 /* 애플.png */; };
 		3BD0E7532A7A3ED500DFA169 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0E7522A7A3ED500DFA169 /* TodoViewController.swift */; };
+		3BD0E79D2A80E94700DFA169 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0E79C2A80E94700DFA169 /* DoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3BD0E7482A7A27BE00DFA169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BD0E74E2A7A284800DFA169 /* 애플.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "애플.png"; path = "../../../Desktop/짤 저장소/애플.png"; sourceTree = "<group>"; };
 		3BD0E7522A7A3ED500DFA169 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		3BD0E79C2A80E94700DFA169 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DoneViewController.swift; path = ../DoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				3BD0E73C2A7A27BD00DFA169 /* SceneDelegate.swift */,
 				3BD0E73E2A7A27BD00DFA169 /* ViewController.swift */,
 				3BD0E7522A7A3ED500DFA169 /* TodoViewController.swift */,
+				3BD0E79C2A80E94700DFA169 /* DoneViewController.swift */,
 				3BD0E7402A7A27BD00DFA169 /* Main.storyboard */,
 				3BD0E7432A7A27BE00DFA169 /* Assets.xcassets */,
 				3BD0E7452A7A27BE00DFA169 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD0E7532A7A3ED500DFA169 /* TodoViewController.swift in Sources */,
+				3BD0E79D2A80E94700DFA169 /* DoneViewController.swift in Sources */,
 				3BD0E73F2A7A27BD00DFA169 /* ViewController.swift in Sources */,
 				3BD0E73B2A7A27BD00DFA169 /* AppDelegate.swift in Sources */,
 				3BD0E73D2A7A27BD00DFA169 /* SceneDelegate.swift in Sources */,

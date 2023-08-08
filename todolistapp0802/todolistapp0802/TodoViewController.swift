@@ -7,7 +7,10 @@
 
 import UIKit
 
+
 class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
+   
+    
 
     
     var task: [String] = []
@@ -70,7 +73,34 @@ class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
             
             return cell
         
+        // 셀에 switch 추가
+        let switchView = UISwitch(frame: CGRect(x: 318, y: 6, width: 49, height: 31))
+        switchView.isOn = false
+        switchView.tag = indexPath.row
+        switchView.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        
+        cell.accessoryView = switchView
+        
+        return cell
+        view.addSubview(switchView)
+        
     }
+    
+    
+    // 스위치 버튼
+    @objc func switchValueChanged(_ sender: UISwitch) {
+        
+        let rowIndex = sender.tag
+        
+        if sender.isOn {
+
+            self.task.remove(at: rowIndex)
+            tableView.reloadData()
+           
+        }
+        
+    }
+
     
     // 셀 삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -93,6 +123,7 @@ class TodoViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
             }
         }
 
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alertController = UIAlertController(title: "할 일 수정", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
