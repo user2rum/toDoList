@@ -73,7 +73,7 @@
         <!--Title-->
         <scene sceneID="Anp-d4-ubb">
             <objects>
-                <viewController id="5gG-NW-qDj" customClass="TodoViewController" customModule="todolistapp0802" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodoViewController" id="5gG-NW-qDj" customClass="TodoViewController" customModule="todolistapp0802" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHA-l1-8Jq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         <!--Title-->
         <scene sceneID="K2i-Vi-1F9">
             <objects>
-                <viewController id="N58-qV-eST" customClass="DoneViewController" customModule="todolistapp0802" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoneViewController" id="N58-qV-eST" customClass="DoneViewController" customModule="todolistapp0802" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8BW-FF-Jkq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
